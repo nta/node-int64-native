@@ -100,7 +100,7 @@ NAN_METHOD(Int64::New) {
   } else {
     v8::Local<v8::Function> cons = Nan::New<v8::Function>(constructor);
     if (info.Length() == 0) {
-      v8::Local<v8::Value> argv[0] = {};
+      v8::Local<v8::Value> argv* = nullptr;
       info.GetReturnValue().Set(cons->NewInstance(0, argv));
     } else if (info.Length() == 1) {
       v8::Local<v8::Value> argv[1] = {info[0]};
